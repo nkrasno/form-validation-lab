@@ -54,7 +54,7 @@ input {
 }
 
 .form-item {
-    height: 80px;
+    height: 85px;
 }
 
 input.valid {
@@ -68,7 +68,6 @@ input.not-valid {
 p {
     visibility: hidden;
     color: #db5a5a;
-    margin: 0;
     font-size: small;
 }
 
