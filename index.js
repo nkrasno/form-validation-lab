@@ -30,34 +30,6 @@ userName.oninvalid = function (e) {
     e.target.setCustomValidity("El nombre no puede contener números");
 }
 
-//Chequear que los campos estén completos y validarlos al salir del input
-
-function checkEmptyField(arg) {
-    if (inputs[arg].value == 0) {
-        addErrorStyles(arg);
-    } else {
-        checkValidity(arg);
-    }
-}
-
-userName.onblur = function () { checkEmptyField(0) };
-email.onblur = function () { checkEmptyField(1) };
-password.onblur = function () { checkEmptyField(2) };
-checkPassword.onblur = function () { checkEmptyField(3) };
-
-//Resetear estilos al enfocar un input
-function resetFieldStyles(arg) {
-    smallError[arg].style.visibility = 'hidden';
-    inputs[arg].classList.remove('not-valid');
-    inputs[arg].classList.remove('valid');
-    img[arg].style.visibility = 'hidden';
-}
-
-userName.onfocus = function () { resetFieldStyles(0) };
-email.onfocus = function () { resetFieldStyles(1) };
-password.onfocus = function () { resetFieldStyles(2) };
-checkPassword.onfocus = function () { resetFieldStyles(3) };
-
 //Chequear validez según el campo y agregar estilos 
 function checkValidity(arg) {
     let userNameRecortado = userName.value.trim();
@@ -98,6 +70,40 @@ function checkValidity(arg) {
             break;
     }
 }
+
+//Chequear que los campos estén completos
+function checkEmptyField(arg) {
+    if (inputs[arg].value == 0) {
+        addErrorStyles(arg);
+    } else {
+        checkValidity(arg);
+    }
+}
+
+//Resetear estilos al enfocar un input
+function resetFieldStyles(arg) {
+    smallError[arg].style.visibility = 'hidden';
+    inputs[arg].classList.remove('not-valid');
+    inputs[arg].classList.remove('valid');
+    img[arg].style.visibility = 'hidden';
+}
+
+//Revisar checkPassword solo si NO está vacío
+function doOnPasswordBlur () {
+    if (inputs[3].value != 0) {
+        checkValidity(3);
+    }
+}
+
+userName.onblur = function () { checkEmptyField(0) };
+email.onblur = function () { checkEmptyField(1) };
+password.onblur = function () { checkEmptyField(2), doOnPasswordBlur() };
+checkPassword.onblur = function () { checkEmptyField(3) };
+
+userName.onfocus = function () { resetFieldStyles(0) };
+email.onfocus = function () { resetFieldStyles(1) };
+password.onfocus = function () { resetFieldStyles(2) };
+checkPassword.onfocus = function () { resetFieldStyles(3) };
 
 //Revisa si los inputs son todos válidos
 function checkAllFields() {
