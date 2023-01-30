@@ -39,6 +39,7 @@ input {
     width: 100%;
     height: 40px;
     margin: auto;
+    padding-right: 30px;
     text-indent: 9px;
 }
 
