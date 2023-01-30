@@ -53,7 +53,7 @@ input {
     visibility: hidden;
 }
 
-.form-item:has(input) {
+.form-item: {
     height: 80px;
 }
 
@@ -68,9 +68,7 @@ input.not-valid {
 p {
     visibility: hidden;
     color: #db5a5a;
-    padding-top: -5px;
-    margin-top: 0px;
-    margin-bottom: 5px;
+    margin: 0;
     font-size: small;
 }
 
