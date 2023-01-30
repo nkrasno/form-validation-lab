@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="script" href="index.js">
+    <title>Laboratorio Nivel 2</title>
+</head>
+
+<body>
+
+    <body>
+        <form id="form" onsubmit="return false;">
+            <h1>Create Account</h1>
+
+            <div class="form-item">
+                <label for="name">Nombre</label>
+                <div class="input-icon-container">
+                    <i class="icon"><img src="" alt=""></i>
+                    <input class="icon-rtl" id="name" type="text" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚçÇ\s]+$">
+                </div>
+                <p>Mensaje de error</p>
+            </div>
+
+            <div class="form-item">
+                <label for="mail">Email</label>
+                <div class="input-icon-container">
+                    <i class="icon"><img src="" alt=""></i>
+                    <input id="mail" type="email">
+                </div>
+                <p>Mensaje de error</p>
+            </div>
+
+            <div class="form-item">
+                <label for="password">Clave</label>
+                <div class="input-icon-container">
+                    <i class="icon"><img src="" alt=""></i>
+                    <input id="password" type="password">
+                </div>
+                <p>Mensaje de error</p>
+            </div>
+
+            <div class="form-item">
+                <label for="check-password">Confirme su clave</label>
+                <div class="input-icon-container">
+                    <i class="icon"><img src="" alt=""></i>
+                    <input id="check-password" type="password">
+                </div>
+                <p>Mensaje de error</p>
+            </div>
+
+            <div class="form-item">
+                <button type="submit" id="button">ENVIAR</button>
+            </div>
+        </form>
+        <script src="index.js"></script>
+    </body>
+
+</html>
