@@ -40,7 +40,7 @@ input {
     height: 40px;
     margin: auto;
     padding-right: 30px;
-    text-indent: 9px;
+    padding-left: 10px;
 }
 
 .input-icon-container i {
