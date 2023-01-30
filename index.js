@@ -30,7 +30,7 @@ user_name.oninvalid = function (e) {
     e.target.setCustomValidity("El nombre no puede contener números");
 }
 
-//Chequear que los campos estén completos y validarlos
+//Chequear que los campos estén completos y validarlos al salir del input
 user_name.onblur = function () { checkEmptyField(0) };
 email.onblur = function () { checkEmptyField(1) };
 password.onblur = function () { checkEmptyField(2) };
@@ -42,20 +42,19 @@ function checkEmptyField(arg) {
     } else {
         checkValidity(arg)
     }
-
-    //Resetear estilos al enfocar un input
-    user_name.onfocus = function () { resetFieldStyles(0) };
-    email.onfocus = function () { resetFieldStyles(1) };
-    password.onfocus = function () { resetFieldStyles(2) };
-    check_password.onfocus = function () { resetFieldStyles(3) };
 }
+
+//Resetear estilos al enfocar un input
+user_name.onfocus = function () { resetFieldStyles(0) };
+email.onfocus = function () { resetFieldStyles(1) };
+password.onfocus = function () { resetFieldStyles(2) };
+check_password.onfocus = function () { resetFieldStyles(3) };
 
 function resetFieldStyles(arg) {
     small_error[arg].style.visibility = 'hidden';
     inputs[arg].classList.remove('not-valid');
     inputs[arg].classList.remove('valid');
     img[arg].style.visibility = 'hidden';
-
 }
 
 //Chequear validez según el campo y agregar estilos 
