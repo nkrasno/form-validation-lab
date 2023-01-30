@@ -36,7 +36,7 @@ function checkEmptyField(arg) {
     if (inputs[arg].value == 0) {
         addErrorStyles(arg);
     } else {
-        checkValidity(arg)
+        checkValidity(arg);
     }
 }
 
@@ -60,7 +60,7 @@ checkPassword.onfocus = function () { resetFieldStyles(3) };
 
 //Chequear validez según el campo y agregar estilos 
 function checkValidity(arg) {
-    let userNameRecortado = userName.value.trim()
+    let userNameRecortado = userName.value.trim();
     const validName = /^[a-zA-ZñÑáéíóúÁÉÍÓÚçÇ\s]+$/;
     const validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     switch (arg) {
