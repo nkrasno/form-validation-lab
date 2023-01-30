@@ -69,6 +69,7 @@ p {
     visibility: hidden;
     color: #db5a5a;
     font-size: small;
+    margin: 0;
 }
 
 button {
