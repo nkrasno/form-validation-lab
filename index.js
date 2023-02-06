@@ -19,6 +19,8 @@ function addErrorStyles(arg) {
 
 //Agregar estilos si NO hay un error
 function addValidStyles(arg) {
+    inputs[arg].classList.remove('not-valid');
+    smallError[arg].style.visibility = 'hidden';
     inputs[arg].classList.add('valid');
     img[arg].src = "images/success-icon.svg";
     img[arg].style.visibility = 'visible';
